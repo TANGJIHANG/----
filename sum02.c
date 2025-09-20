@@ -61,7 +61,7 @@ int main()
 
     printf("the average is %f\n",average(arr));
 
-    count(arr,average(arr));
+    printf("there are %d nums under the average \n",count(arr,average(arr)));
 
     return 0;
 }
