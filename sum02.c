@@ -24,6 +24,7 @@ int main()
         do
         {
             num = rand() % 100 + 1;
+            printf("wowowowo%d\n",num);
         } while (exist(arr, i, num));
         arr[i] = num;
     }
