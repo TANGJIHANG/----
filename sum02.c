@@ -18,17 +18,18 @@ int main()
 {
     srand((unsigned int)time(NULL));
     int arr[10];
-    for(int i = 0;i < 10;i++)
+    for (int i = 0; i < 10; i++)
     {
-        int num = rand()%100 + 1;
-        while(!exist(arr,i,num))
+        int num = 0;
+        do
         {
-            arr[i] = num;
-        }
+            num = rand() % 100 + 1;
+        } while (exist(arr, i, num));
+        arr[i] = num;
     }
-    for(int i = 0;i < 10;i++)
+    for (int i = 0; i < 10; i++)
     {
-        printf("%d\n",arr[i]);
+        printf("%d\n", arr[i]);
     }
 
     return 0;
