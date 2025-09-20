@@ -15,7 +15,7 @@ int exist(int arr[], int count, int num)
 }
 
 // get the average number
-int average(int arr[])
+double average(int arr[])
 {
     double sum = 0;
     for (int i = 0; i < 10; i++)
@@ -23,7 +23,7 @@ int average(int arr[])
         sum += arr[i];
     }
     double aver = sum / 10;
-    printf("the average of this array is: %d\n", aver);
+    printf("the average of this array is: %f\n", aver);
     return aver;
 }
 
@@ -50,7 +50,6 @@ int main()
         do
         {
             num = rand() % 100 + 1;
-            printf("wowowowo%d\n", num);
         } while (exist(arr, i, num));
         arr[i] = num;
     }
@@ -60,9 +59,9 @@ int main()
         printf("%d\n", arr[i]);
     }
 
-    average(arr);
+    printf("the average is %f\n",average(arr));
 
     count(arr,average(arr));
-    
+
     return 0;
 }
