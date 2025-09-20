@@ -1,49 +1,48 @@
-#include<stdio.h>
-#include<time.h>
+#include <stdio.h>
+#include <time.h>
 
-//check if any num is the same:
-int check(int num1,int num2)
+// check if any num is the same:
+int check(int num[], int arr[], int count)
+// count代表了num口号中的编号
 {
-    if(num1 == num2)
+    int a = 0;
+    for (int i = 0; i < count; i++)
     {
-        return 1;
+        if (num[count] == arr[i])
+        {
+            a++;
+        }
     }
-    else
-    {
-        return 0;
-    }
+    return a;
 }
 
 int main()
 {
     srand((unsigned int)time(NULL));
-    //produce 10 different nums
+    // produce 10 different nums
 
-
-    //先生成
-    //判断成功后，把它存入数组
+    // 先生成
+    // 判断成功后，把它存入数组
+    int num[10];
     int arr[10];
     arr[0] = rand();
-    //第一个数不可能重复
-    //第二个数需要判断
-    
-    do
+    // 第一个数不可能重复
+    // 第二个数需要判断
+
+
+    for (int i = 1; i < 10; i++)
     {
-        int num1 = rand();
-        arr[1] = num1;
-    }while(check(arr[1],arr[0]));
-    //当while括号中为0是可以停止，
+        do
+        {
+            num[i] = rand();
+            arr[i] = num[i];
+        } while (num, arr, i);
+    }
 
-    //第三个数
-    do
+    for(int i = 0;i < 10; i++)
     {
-        int num2 = rand();
-        arr[2] = num2;
-    }while(check(arr[2],arr[1]))
-    //问题check函数要滚动循环
-
-
-
+        printf("%d\n",arr[i]);
+    }
 
     return 0;
 }
